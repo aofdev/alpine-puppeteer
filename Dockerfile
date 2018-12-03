@@ -9,4 +9,9 @@ RUN apk update && apk upgrade && \
   && rm -rf /var/cache/apk/* \
   /tmp/*
 
-ENV CHROME_BIN /usr/bin/chromium-browser
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
+
+ENV CHROME_BIN /usr/bin/chromium-browser \
+    CHROME_PATH /usr/lib/chromium/
+
+RUN npm install puppeteer@1.4.0
