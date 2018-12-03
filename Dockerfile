@@ -14,4 +14,4 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 ENV CHROME_BIN /usr/bin/chromium-browser \
     CHROME_PATH /usr/lib/chromium/
 
-RUN npm install puppeteer@1.4.0
+RUN npm install -g puppeteer@1.4.0
