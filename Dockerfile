@@ -1,4 +1,4 @@
-FROM node:11-alpine
+FROM node:10-alpine
 
 RUN apk update && apk upgrade && \
   echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories && \
@@ -6,12 +6,12 @@ RUN apk update && apk upgrade && \
   apk add --no-cache \
   chromium@edge \
   nss@edge \
+  vim@edge \
   && rm -rf /var/cache/apk/* \
   /tmp/*
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 
-ENV CHROME_BIN /usr/bin/chromium-browser \
-    CHROME_PATH /usr/lib/chromium/
+ENV CHROME_BIN /usr/bin/chromium-browser
 
 RUN npm install -g puppeteer@1.4.0
